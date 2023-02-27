@@ -7,6 +7,10 @@ function App() {
 
   let [notes,deleteNote] = useState(JSON.parse(localStorage.getItem('Notes'))); 
 
+  if(notes===null){
+    deleteNote([])
+  }
+
   localStorage.setItem('Notes',JSON.stringify(notes))
 
   console.log();
